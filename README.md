@@ -7,8 +7,9 @@ background under PlayCover.
 
 This repo holds the source: Objective-C shims, shell scripts, and docs.
 The decrypted original IPA and the patched builds it produces are archived
-separately (archive.org link to follow) so the game is preserved as a
-runnable pair.
+separately so the game is preserved as a runnable set:
+
+https://archive.org/details/prince-of-persia-time-run-2.0.5-restored
 
 ## The fixes
 
