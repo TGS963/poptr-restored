@@ -40,3 +40,7 @@ INSERT_DYLIB=/path/to/insert_dylib \
 ```
 
 The log lands at `Documents/PoPTR-Restored.log`, reachable via Finder.
+
+The optional currency and character modification is applied separately to a
+completed restored IPA. See [unlocks.md](unlocks.md); it is never included by
+the normal iPhone patch command.

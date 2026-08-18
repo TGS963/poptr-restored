@@ -24,3 +24,7 @@ INSERT_DYLIB=/path/to/insert_dylib \
 
 Import the IPA into PlayCover. Start with keymapping off; the game's old
 touch queue under translated keymaps isn't validated.
+
+Want the currency and character unlocks too? That's a separate pass over the
+finished restored IPA, never part of the normal patch command. See
+[unlocks.md](unlocks.md).

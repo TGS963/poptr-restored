@@ -12,3 +12,6 @@ recovered scripts, no Apple SDK files, no PlayTools, no signing identities.
 
 Complying with applicable laws and platform terms is the user's
 responsibility.
+
+The optional unlock module modifies only the user's local game save. It is not
+included by the normal restoration process.

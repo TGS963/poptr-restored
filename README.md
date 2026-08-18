@@ -5,7 +5,7 @@ modern iPhone and on Apple Silicon via PlayCover. The game was delisted years
 ago; unpatched, it crashes at launch on recent iOS and draws a black
 background under PlayCover.
 
-This repo holds the source: Objective-C shims, two shell scripts, and docs.
+This repo holds the source: Objective-C shims, shell scripts, and docs.
 The decrypted original IPA and the patched builds it produces are archived
 separately (archive.org link to follow) so the game is preserved as a
 runnable pair.
@@ -18,6 +18,8 @@ runnable pair.
   StoreKit endpoints
 - `gfxfix.dylib` (PlayCover only) forces retained backing on the old Spark2
   render layers so the background isn't black
+- `unlockmod.dylib` (optional) unlocks in-game currency and character skins;
+  kept out of the normal patch flow on purpose
 
 The iPhone patcher also strips `UISupportedDevices` from the Info.plist, a
 hardcoded device allowlist that blocks installs on newer models. All real
@@ -44,6 +46,22 @@ INSERT_DYLIB=/path/to/insert_dylib \
 
 Add `--diagnostics` after `iphone` to inject a small launch logger. The output
 IPA is ad-hoc signed; your install tool still needs to sign it properly.
+
+Unlocks are a separate second step on top of an already restored IPA:
+
+```bash
+scripts/build-unlocks.sh iphone      # or: playcover
+
+INSERT_DYLIB=/path/to/insert_dylib \
+  scripts/add-unlocks.sh iphone restored-iphone.ipa unlocked-iphone.ipa
+
+INSERT_DYLIB=/path/to/insert_dylib \
+  scripts/add-unlocks.sh playcover restored-playcover.ipa unlocked-playcover.ipa
+```
+
+The normal restoration output is never touched by this. Read
+[docs/unlocks.md](docs/unlocks.md) first, and back up the app container
+before applying; it edits save data.
 
 Details in [docs/iphone.md](docs/iphone.md) and
 [docs/playcover.md](docs/playcover.md); known failure modes in

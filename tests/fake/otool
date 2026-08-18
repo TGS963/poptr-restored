@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly game="${!#}"
+readonly app="$(dirname "$game")"
+shopt -s nullglob
+for marker in "$app"/*.load-command; do
+    marker_name="${marker##*/}"
+    library="${marker_name%.load-command}"
+    echo "\t@executable_path/$library (compatibility version 0.0.0, current version 0.0.0)"
+done
