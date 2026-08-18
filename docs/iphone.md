@@ -39,5 +39,4 @@ INSERT_DYLIB=/path/to/insert_dylib \
   scripts/patch.sh iphone --diagnostics input.ipa diagnostic-iphone.ipa
 ```
 
-The log lands at `Documents/PoPTR-Restored.log`, reachable via Finder file
-sharing.
+The log lands at `Documents/PoPTR-Restored.log`, reachable via Finder.
